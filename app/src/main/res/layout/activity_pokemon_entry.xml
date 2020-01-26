@@ -7,19 +7,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="585dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/abilities"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pokemonData"
@@ -39,24 +32,52 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.309" />
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonId" />
+
+                <TextView
+                    android:id="@+id/pokemonEggGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonName" />
+
+                <TextView
+                    android:id="@+id/pokemonTypes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonEggGroup" />
+
+                <TextView
+                    android:id="@+id/pokemonEVYield"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonTypes" />
 
                 <TextView
                     android:id="@+id/pokemonId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:text="TextView"
-                    app:layout_constraintBottom_toTopOf="@+id/pokemonName"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.04000002" />
 
                 <ProgressBar
                     android:id="@+id/genderBar"
@@ -65,10 +86,10 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.09"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/pokemonIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/pokemonName"
-                    app:layout_constraintVertical_bias="0.131" />
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonEVYield"
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.tabs.TabLayout
@@ -80,14 +101,21 @@
                 android:background="#00B32727"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.viewpager.widget.ViewPager
+            <com.example.listviewdemo.pokemonEntryView.pokemonAbility.PokemonAbilityViewPager
                 android:id="@+id/abilityviewpager"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:background="@android:color/white">
+
+            </com.example.listviewdemo.pokemonEntryView.pokemonAbility.PokemonAbilityViewPager>
+
+            <TableLayout
+                android:id="@+id/moveLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal" />
 
         </LinearLayout>
     </ScrollView>

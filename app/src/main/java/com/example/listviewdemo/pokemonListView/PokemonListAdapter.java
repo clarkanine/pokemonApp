@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.listviewdemo.R;
 import com.example.listviewdemo.util.ImageResourceUtil;
+import com.example.listviewdemo.util.PokemonStringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +82,7 @@ public class PokemonListAdapter<T> extends BaseAdapter implements Filterable {
         convertView = inflater.inflate(resource, parent, false);
 
         TextView textViewName = convertView.findViewById(R.id.pokemonName);
-        textViewName.setText(entry.getPokemonSpecies().getName());
+        textViewName.setText(PokemonStringUtil.format(entry.getPokemonSpecies().getName()));
         ImageView pokemonIcon = convertView.findViewById(R.id.pokemonIcon);
 
         pokemonIcon.setImageResource(ImageResourceUtil.getPokemonImageResourceId(entry.getPokemonSpecies().getId()));
